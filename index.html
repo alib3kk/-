@@ -63,6 +63,20 @@
     .carousel-slide {
       transition: opacity 650ms cubic-bezier(.4, 0, .2, 1), transform 650ms cubic-bezier(.4, 0, .2, 1);
     }
+    #servicePageView .sp-mobile-accordion > summary {
+      list-style: none;
+    }
+    #servicePageView .sp-mobile-accordion > summary::-webkit-details-marker {
+      display: none;
+    }
+    #servicePageView .sp-mobile-accordion > summary::marker {
+      content: '';
+    }
+    #servicePageView .sp-mobile-accordion > summary:focus-visible {
+      outline: 2px solid #A86849;
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
     @media (hover: hover) and (prefers-reduced-motion: no-preference) {
       .service-card:hover {
         transform: translateY(-4px);
@@ -202,24 +216,192 @@
         overflow: hidden;
       }
     }
+    @keyframes heroRiseIn {
+      from { opacity: 0; translate: 0 14px; }
+      to { opacity: 1; translate: 0 0; }
+    }
+    @keyframes heroGlowDrift {
+      from { opacity: .55; transform: translate3d(0, 0, 0) scale(.96); }
+      to { opacity: .9; transform: translate3d(-18px, 12px, 0) scale(1.04); }
+    }
+    #homeView #top {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+    }
+    #homeView #top::before {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      width: min(58vw, 760px);
+      aspect-ratio: 1;
+      top: -48%;
+      right: -10%;
+      border-radius: 9999px;
+      background: radial-gradient(circle, rgba(168, 104, 73, .12) 0, rgba(168, 104, 73, .045) 38%, transparent 70%);
+      pointer-events: none;
+    }
+    #homeView #top > div {
+      position: relative;
+      z-index: 1;
+    }
+    #homeView #technicalSpecsStrip > div {
+      position: relative;
+      overflow: hidden;
+      transition: transform 240ms cubic-bezier(.2, .8, .2, 1), box-shadow 240ms ease, border-color 180ms ease;
+    }
+    #homeView #technicalSpecsStrip > div::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 16px;
+      right: 16px;
+      height: 2px;
+      border-radius: 9999px;
+      background: linear-gradient(90deg, #A86849, rgba(168, 104, 73, 0));
+      opacity: .35;
+      transform: scaleX(.36);
+      transform-origin: left;
+      transition: transform 260ms cubic-bezier(.2, .8, .2, 1), opacity 200ms ease;
+    }
+    #homeView #serviceDirectionTabs > button {
+      transition: transform 220ms cubic-bezier(.2, .8, .2, 1), box-shadow 220ms ease, border-color 180ms ease, background-color 180ms ease;
+    }
+    #homeView #serviceDirectionTabs > button svg {
+      transition: transform 220ms cubic-bezier(.2, .8, .2, 1);
+    }
+    @media (max-width: 639px) {
+      #homeView #top::before {
+        width: 280px;
+        top: -10%;
+        right: -18%;
+      }
+    }
+    #homeView #serviceDirectionTabs > button:active {
+      transform: scale(.985);
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      #homeView #top::before {
+        animation: heroGlowDrift 13s ease-in-out infinite alternate;
+      }
+      #homeView #top nav[aria-label="Breadcrumb"] {
+        animation: heroRiseIn 520ms cubic-bezier(.2, .8, .2, 1) both;
+      }
+      #homeView #mainPageHeading {
+        animation: heroRiseIn 650ms cubic-bezier(.2, .8, .2, 1) 60ms both;
+      }
+      #homeView #heroLeadText {
+        animation: heroRiseIn 650ms cubic-bezier(.2, .8, .2, 1) 140ms both;
+      }
+      #homeView #technicalSpecsStrip > div {
+        animation: heroRiseIn 620ms cubic-bezier(.2, .8, .2, 1) both;
+      }
+      #homeView #technicalSpecsStrip > div:nth-child(1) { animation-delay: 220ms; }
+      #homeView #technicalSpecsStrip > div:nth-child(2) { animation-delay: 310ms; }
+      #homeView #technicalSpecsStrip > div:nth-child(3) { animation-delay: 400ms; }
+      #homeView #serviceDirectionTabs > button {
+        animation: heroRiseIn 620ms cubic-bezier(.2, .8, .2, 1) both;
+      }
+      #homeView #serviceDirectionTabs > button:nth-child(1) { animation-delay: 500ms; }
+      #homeView #serviceDirectionTabs > button:nth-child(2) { animation-delay: 580ms; }
+      #homeView #serviceDirectionTabs > button:nth-child(3) { animation-delay: 660ms; }
+    }
+    @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+      #homeView #technicalSpecsStrip > div:hover {
+        transform: translateY(-4px);
+        border-color: rgba(168, 104, 73, .45);
+        box-shadow: 0 12px 28px rgba(43, 55, 50, .08);
+      }
+      #homeView #technicalSpecsStrip > div:hover::before {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+      #homeView #serviceDirectionTabs > button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 22px rgba(43, 55, 50, .09);
+      }
+      #homeView #serviceDirectionTabs > button:hover svg {
+        transform: translateX(3px);
+      }
+    }
+    #homeView #heroIntro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(290px, 340px); gap: clamp(24px, 4vw, 48px); align-items: center; }
+    #homeView #heroCopy { max-width: none; }
+    #homeView #heroProjectCard { min-width: 0; overflow: hidden; border: 1px solid #E0DDD3; border-radius: 18px; background: #FBFAF7; box-shadow: 0 14px 34px rgba(43, 55, 50, .1); transition: transform 240ms cubic-bezier(.2, .8, .2, 1), box-shadow 240ms ease; }
+    .dark #homeView #heroProjectCard { border-color: #33413A; background: #151B18; }
+    #homeView .hero-project-frame { position: relative; overflow: hidden; aspect-ratio: 16 / 10; background: #D9D7D0; }
+    #homeView .hero-project-frame::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(135deg, rgba(43, 55, 50, .08), transparent 52%); }
+    #homeView .hero-project-image { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 650ms cubic-bezier(.2, .8, .2, 1); }
+    #homeView .hero-project-kicker { position: absolute; left: 12px; top: 12px; z-index: 1; padding: 6px 9px; border: 1px solid rgba(255,255,255,.32); border-radius: 9999px; background: rgba(43, 55, 50, .72); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .04em; backdrop-filter: blur(8px); }
+    #homeView .hero-project-controls { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 11px 12px; }
+    #homeView .hero-project-controls > strong { min-width: 0; color: #2B3732; font-family: "Unbounded", "Montserrat", sans-serif; font-size: 12px; line-height: 1.25; }
+    .dark #homeView .hero-project-controls > strong { color: #F8FAFC; }
+    #homeView .hero-project-options { display: inline-flex; flex: 0 0 auto; gap: 4px; padding: 3px; border: 1px solid #E6E2D9; border-radius: 9999px; background: #F1EEE8; }
+    .dark #homeView .hero-project-options { border-color: #38453E; background: #202923; }
+    #homeView .hero-project-option { min-height: 30px; padding: 5px 10px; border: 0; border-radius: 9999px; background: transparent; color: #55615A; font: 700 10px/1 "Montserrat", sans-serif; cursor: pointer; transition: color 180ms ease, background-color 180ms ease, transform 180ms ease; }
+    .dark #homeView .hero-project-option { color: #D1D9D4; }
+    #homeView .hero-project-option.is-active { background: #A86849; color: #fff; box-shadow: 0 3px 9px rgba(168, 104, 73, .22); }
+    #homeView .hero-project-option:focus-visible { outline: 2px solid #A86849; outline-offset: 2px; }
+    @media (max-width: 899px) {
+      #homeView #heroIntro { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+      #homeView #heroProjectCard { display: grid; grid-template-columns: minmax(0, 40%) minmax(0, 1fr); align-items: stretch; gap: 10px; padding: 7px; }
+      #homeView .hero-project-frame { width: 100%; min-width: 0; min-height: 88px; aspect-ratio: 16 / 10; border-radius: 12px; }
+      #homeView .hero-project-kicker { top: auto; bottom: 6px; left: 6px; padding: 4px 6px; font-size: 8px; }
+      #homeView .hero-project-controls { position: relative; z-index: 2; width: 100%; min-width: 0; padding: 5px 3px; align-items: flex-start; flex-direction: column; justify-content: center; gap: 7px; }
+      #homeView .hero-project-controls > strong { max-width: 100%; min-width: 0; font-size: 11px; overflow-wrap: anywhere; }
+      #homeView .hero-project-options { max-width: 100%; flex-wrap: nowrap; }
+      #homeView .hero-project-option { min-width: 0; min-height: 32px; padding: 6px 9px; font-size: 9px; white-space: nowrap; }
+    }
+    @media (max-width: 420px) {
+      #homeView #heroProjectCard { grid-template-columns: minmax(0, 38%) minmax(0, 1fr); gap: 8px; }
+      #homeView .hero-project-controls { gap: 6px; }
+      #homeView .hero-project-option { padding-inline: 7px; }
+    }
+    @media (max-width: 639px) {
+      #servicePageView #spHeroSection { padding-block: 20px; }
+      #servicePageView #spHeroSection > div > .grid { gap: 20px; }
+      #servicePageView #spSpecsGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 16px; }
+      #servicePageView .sp-spec-card { min-width: 0; padding: 10px; border-radius: 12px; }
+      #servicePageView .sp-spec-label { font-size: 9px; line-height: 1.25; }
+      #servicePageView .sp-spec-value { font-size: 13px; line-height: 1.25; overflow-wrap: anywhere; }
+      #servicePageView .sp-spec-sub { font-size: 10px; line-height: 1.4; }
+      #servicePageView #spCtaRow { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 16px; }
+      #servicePageView #spCtaRow > * { min-width: 0; padding: 11px 7px; border-radius: 10px; font-size: 11px; line-height: 1.3; }
+      #servicePageView #spGalleryContainer > div:first-child { aspect-ratio: 16 / 10; }
+      #servicePageView #spThumbsRow { margin-top: 8px; gap: 8px; }
+      #servicePageView #spScopeSection,
+      #servicePageView #spProblemsSection,
+      #servicePageView #spGuaranteeSection { padding-block: 24px; }
+      #servicePageView #spScopeHeading { margin-bottom: 12px; }
+      #servicePageView #spProblemsSection .max-w-3xl { margin-bottom: 14px; }
+      #servicePageView #spScopeGrid,
+      #servicePageView #spProblemsGrid { gap: 8px; }
+      #servicePageView .sp-mobile-accordion { min-width: 0; padding: 0; border-radius: 13px; }
+      #servicePageView .sp-mobile-accordion > summary { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 13px; cursor: pointer; list-style: none; }
+      #servicePageView .sp-mobile-accordion > summary::-webkit-details-marker { display: none; }
+      #servicePageView .sp-mobile-accordion > summary::marker { content: ''; }
+      #servicePageView .sp-mobile-accordion .sp-accordion-chevron { display: block; width: 17px; height: 17px; flex: 0 0 auto; color: #A86849; transition: transform 180ms ease; }
+      #servicePageView .sp-mobile-accordion[open] .sp-accordion-chevron { transform: rotate(180deg); }
+      #servicePageView .sp-mobile-accordion .sp-mobile-detail { padding: 0 13px 13px; margin-top: 0; font-size: 12px; line-height: 1.55; }
+      #servicePageView .sp-mobile-accordion .sp-mobile-detail-inner { padding: 0 13px 13px; }
+      #servicePageView #spScopeGrid .sp-mobile-detail { padding-left: 35px; }
+      #servicePageView #spProblemsGrid .sp-mobile-accordion > summary { align-items: flex-start; }
+    }
+    @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+      #homeView #heroProjectCard:hover { transform: translateY(-4px); box-shadow: 0 22px 42px rgba(43, 55, 50, .16); }
+      #homeView #heroProjectCard:hover .hero-project-image { transform: scale(1.045); }
+      #homeView .hero-project-option:not(.is-active):hover { color: #A86849; }
+    }
   </style>
 </head>
 <body class="bg-[#FBFAF7] dark:bg-[#151B18] text-[#2B3732] dark:text-slate-100 transition-colors duration-200 pb-20 md:pb-0">
 
-  <!-- TOP BAR (Language Switcher & Quick Specs Ticker) -->
+  <!-- TOP BAR (Quick Specs Ticker) -->
   <div class="bg-[#29342F] text-white text-xs">
-    <div class="max-w-[1220px] mx-auto px-4 sm:px-6 h-10 flex items-center justify-between gap-2">
+    <div class="max-w-[1220px] mx-auto px-4 sm:px-6 h-10 flex items-center justify-start gap-2">
       <div class="flex items-center gap-3 text-[11px] sm:text-[12px] text-white/80 truncate">
         <span id="topBarSpec" class="font-medium truncate">Алмазное бурение 200 · 300 · 400 мм · Глубина до 1200 мм · Дисковая резка бетона</span>
       </div>
-      <div class="inline-flex items-center bg-[#3A443F] rounded-full p-0.5 border border-white/10 shrink-0">
-        <button type="button" id="langRusBtn" class="px-3 py-1 rounded-full text-[11px] font-bold bg-white text-[#29342F] transition-all">
-          РУС
-        </button>
-        <button type="button" id="langKazBtn" class="px-3 py-1 rounded-full text-[11px] font-semibold text-white/80 hover:text-white transition-all">
-          ҚАЗ
-        </button>
-      </div>
+
     </div>
   </div>
 
@@ -296,13 +478,28 @@
         </nav>
 
         <!-- Main Heading with Stretched Display Font -->
-        <div class="max-w-4xl">
-          <h1 id="mainPageHeading" class="font-stretched text-[24px] sm:text-[34px] lg:text-[40px] font-bold text-[#2B3732] dark:text-white leading-[1.18]">
-            Алмазное бурение и резка бетона в Астане
-          </h1>
-          <p id="heroLeadText" class="mt-3 text-[14px] sm:text-[16px] text-[#55615A] dark:text-slate-300 leading-relaxed max-w-3xl">
-            Выполняем безударное алмазное бурение отверстий и дисковую резку бетона. Работаем аккуратно, точно в размер и с сохранением несущей способности конструкций.
-          </p>
+        <div id="heroIntro" class="hero-intro">
+          <div id="heroCopy" class="max-w-4xl">
+            <h1 id="mainPageHeading" class="font-stretched text-[24px] sm:text-[34px] lg:text-[40px] font-bold text-[#2B3732] dark:text-white leading-[1.18]">
+              Алмазное бурение и резка бетона в Астане
+            </h1>
+            <p id="heroLeadText" class="mt-3 text-[14px] sm:text-[16px] text-[#55615A] dark:text-slate-300 leading-relaxed max-w-3xl">
+              Выполняем безударное алмазное бурение отверстий и дисковую резку бетона. Работаем аккуратно, точно в размер и с сохранением несущей способности конструкций.
+            </p>
+          </div>
+          <aside id="heroProjectCard" class="hero-project-card" aria-label="Фото работ с выбором технологии">
+            <div class="hero-project-frame">
+              <img id="heroProjectImage" class="hero-project-image" src="images/drilling-1.jpeg" alt="Алмазное бурение бетона на объекте" fetchpriority="high" />
+              <span class="hero-project-kicker">Фото с объекта</span>
+            </div>
+            <div class="hero-project-controls">
+              <strong id="heroProjectCaption">Алмазное бурение бетона</strong>
+              <div class="hero-project-options" role="group" aria-label="Выберите вид работ">
+                <button type="button" class="hero-project-option is-active" data-hero-project="drilling" aria-pressed="true">Бурение</button>
+                <button type="button" class="hero-project-option" data-hero-project="cutting" aria-pressed="false">Резка</button>
+              </div>
+            </div>
+          </aside>
         </div>
 
         <!-- STRETCHED KEY TECHNICAL SPECS STRIP (Diameter up to 400 mm, Depth up to 1200 mm, Disc Cutting) -->
@@ -425,8 +622,8 @@
                   />
                   <img
                     id="srcDrilling3"
-                    src="images/drilling-2.jpeg"
-                    alt="Алмазное бурение бетона коронкой на строительном объекте"
+                    src="images/drilling-3.jpeg"
+                    alt="Установка для алмазного бурения отверстия в бетонной стене"
                     class="carousel-slide drilling-slide absolute inset-0 w-full h-full object-cover opacity-0 scale-105 pointer-events-none"
                   />
                 </button>
@@ -774,7 +971,7 @@
     </div>
 
     <!-- Service Page Hero with Auto-Advancing 3-Photo Interactive Gallery -->
-    <section class="py-8 sm:py-12 border-b border-[#E6E2D9] dark:border-slate-800">
+    <section id="spHeroSection" class="py-8 sm:py-12 border-b border-[#E6E2D9] dark:border-slate-800">
       <div class="max-w-[1220px] mx-auto px-4 sm:px-6">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
@@ -792,7 +989,7 @@
             <div id="spSpecsGrid" class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
 
             <!-- Primary CTA Row: "Заказать расчёт" + WhatsApp -->
-            <div class="mt-7 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <div id="spCtaRow" class="mt-7 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <button type="button" id="spOrderCalcBtn" class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-[12px] bg-[#A86849] hover:bg-[#8E573D] text-white text-[15px] font-bold transition-colors shadow-sm">
                 <span>Заказать расчёт</span>
               </button>
@@ -826,7 +1023,7 @@
     </section>
 
     <!-- Service Scope & Technical Capabilities -->
-    <section class="py-10 sm:py-14 bg-[#F7F5EF] dark:bg-[#1A221E] border-b border-[#E6E2D9] dark:border-slate-800">
+    <section id="spScopeSection" class="py-10 sm:py-14 bg-[#F7F5EF] dark:bg-[#1A221E] border-b border-[#E6E2D9] dark:border-slate-800">
       <div class="max-w-[1220px] mx-auto px-4 sm:px-6">
         <h2 id="spScopeHeading" class="font-stretched text-[20px] sm:text-[26px] font-bold text-[#2B3732] dark:text-white mb-6">
           Какие задачи решает услуга
@@ -836,7 +1033,7 @@
     </section>
 
     <!-- 3 Key Problems We Solve -->
-    <section class="py-10 sm:py-14 border-b border-[#E6E2D9] dark:border-slate-800">
+    <section id="spProblemsSection" class="py-10 sm:py-14 border-b border-[#E6E2D9] dark:border-slate-800">
       <div class="max-w-[1220px] mx-auto px-4 sm:px-6">
         <div class="max-w-3xl mb-8">
           <span class="text-[11px] font-bold uppercase tracking-wider text-[#A86849]">Надёжный подход</span>
@@ -849,7 +1046,7 @@
     </section>
 
     <!-- Quality Guarantee Banner inside Service Page -->
-    <section class="py-10 sm:py-14 bg-[#F7F5EF] dark:bg-[#1A221E] border-b border-[#E6E2D9] dark:border-slate-800">
+    <section id="spGuaranteeSection" class="py-10 sm:py-14 bg-[#F7F5EF] dark:bg-[#1A221E] border-b border-[#E6E2D9] dark:border-slate-800">
       <div class="max-w-[1220px] mx-auto px-4 sm:px-6">
         <div class="bg-white dark:bg-[#151B18] rounded-[20px] border border-[#E6E2D9] dark:border-slate-800 p-6 sm:p-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           <div class="max-w-2xl">
@@ -1078,10 +1275,19 @@
   <script>
     (function () {
       const WHATSAPP_NUMBER = '77052675327';
-      let currentLang = 'ru';
       let currentCity = 'Астана';
       let activeServicePage = null; // null | 'drilling' | 'cutting'
       let activeSubpagePhotoIndex = 0;
+      const serviceDesktopLayout = window.matchMedia('(min-width: 640px)');
+      const syncServiceAccordionState = (event) => {
+        document.querySelectorAll('#spScopeGrid .sp-mobile-accordion, #spProblemsGrid .sp-mobile-accordion')
+          .forEach((accordion) => { accordion.open = event.matches; });
+      };
+      if (serviceDesktopLayout.addEventListener) {
+        serviceDesktopLayout.addEventListener('change', syncServiceAccordionState);
+      } else {
+        serviceDesktopLayout.addListener(syncServiceAccordionState);
+      }
 
       // Real non-AI jobsite photographs from the internet (0% AI, 0% watermarks)
       const realWebPhotos = {
@@ -1095,8 +1301,8 @@
             alt: 'Влажное алмазное бурение бетона на станине в процессе работы'
           },
           {
-            src: 'images/drilling-2.jpeg',
-            alt: 'Алмазное бурение бетона коронкой на строительном объекте'
+            src: 'images/drilling-3.jpeg',
+            alt: 'Установка для алмазного бурения отверстия в бетонной стене'
           }
         ],
         cutting: [
@@ -1115,6 +1321,29 @@
         ]
       };
 
+      const heroProjectPhotos = {
+        drilling: { src: 'images/drilling-1.jpeg', alt: 'Алмазное бурение бетона на объекте', caption: 'Алмазное бурение бетона' },
+        cutting: { src: 'images/cutting-1.jpeg', alt: 'Дисковая резка бетонной стены на объекте', caption: 'Дисковая резка бетона' }
+      };
+      const heroProjectImage = document.getElementById("heroProjectImage");
+      const heroProjectCaption = document.getElementById("heroProjectCaption");
+      document.querySelectorAll(".hero-project-option").forEach((button) => {
+        button.addEventListener("click", () => {
+          const photo = heroProjectPhotos[button.dataset.heroProject];
+          if (!photo) return;
+          heroProjectImage.src = photo.src;
+          heroProjectImage.alt = photo.alt;
+          heroProjectCaption.textContent = photo.caption;
+          document.querySelectorAll(".hero-project-option").forEach((option) => {
+            const isActive = option === button;
+            option.classList.toggle("is-active", isActive);
+            option.setAttribute("aria-pressed", String(isActive));
+          });
+          if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && typeof heroProjectImage.animate === "function") {
+            heroProjectImage.animate([{ opacity: .55 }, { opacity: 1 }], { duration: 260, easing: "ease-out" });
+          }
+        });
+      });
       // Auto-Advancing Card Carousel State & Logic
       const cardCarouselState = {
         drilling: { index: 0, paused: false },
@@ -1336,185 +1565,7 @@
             ]
           }
         },
-        kz: {
-          drilling: {
-            breadcrumb: 'Бетонды алмазды бұрғылау',
-            badge: 'Қызмет 01 · Саңылауларды соққысыз бұрғылау',
-            title: 'Астанада бетонды алмазды бұрғылау',
-            lead: 'Желдету, сантехника, жылыту және инженерлік желілерге арналған бетон саңылауларын кәсіби алмазды бұрғылау. Саңылау диаметрі — 200, 300 және 400 мм-ге дейін, тереңдігі — 1200 мм-ге дейін (600–1200 мм).',
-            specs: [
-              { label: 'Саңылау диаметрі', value: '200 · 300 · 400 ММ', sub: 'Құбырлар мен ауа арналарына 400 мм дейінгі дәл диаметр' },
-              { label: 'Бұрғылау тереңдігі', value: '1200 ММ ДЕЙІН', sub: 'Қалыңдығы 600–1200 мм бетон қабырғаларды бұрғылау' },
-              { label: 'Материал', value: 'БЕТОН', sub: 'Бетон қабырғалар мен жабындарда тегіс саңылаулар' },
-              { label: 'Дәлдік', value: 'ЖАРЫҚШАҚСЫЗ', sub: 'Белгіленген өлшем бойынша дәл бұрғылау' }
-            ],
-            scope: [
-              {
-                title: 'Желдету, ауа клапандары және кондиционер жүйелері',
-                desc: 'Қасбет пен ішкі әрлеуді бүлдірмей, желдету жүйелері мен сплит-жүйелерге арналған бетондағы дәл саңылауларды бұрғылау.'
-              },
-              {
-                title: 'Сумен жабдықтау, жылыту және кәріз жүйелері',
-                desc: 'Құбырлар мен инженерлік коммуникацияларды өткізу үшін бетон жабындары мен қабырғаларын тесіп өту.'
-              },
-              {
-                title: '1200 мм-ге дейінгі тереңдікте бетонды бұрғылау',
-                desc: 'Қалың бетон қабырғалар мен іргетастарды 600–1200 мм тереңдікте дәл бұрғылау.'
-              },
-              {
-                title: 'Диаметрі 200, 300 және 400 мм-ге дейінгі саңылаулар',
-                desc: 'Инженерлік желілер, кабель трассалары мен құбырларға арналған технологиялық саңылаулар.'
-              }
-            ],
-            problems: [
-              {
-                num: '01',
-                problem: 'Дәлсіздік және бетонның жарылуы',
-                desc: 'Соққылы құралдармен жұмыс істегенде саңылау қисайып, бетон шеттері опырылып кетеді.',
-                solution: 'Бекітілген станина саңылаудың түзу геометриясын және тегіс жиегін қамтамасыз етеді.'
-              },
-              {
-                num: '02',
-                problem: 'Қалың бетон қабырғаларды бұрғылау қиындығы',
-                desc: 'Кәдімгі құралдар қалың бетонды тесіп өте алмайды.',
-                solution: '200, 300 және 400 мм-ге дейінгі диаметрмен 1200 мм-ге дейінгі тереңдікте бетонды дәл бұрғылаймыз.'
-              },
-              {
-                num: '03',
-                problem: 'Шаң-тозаң және дайын жөндеуді бүлдіру қаупі',
-                desc: 'Тұрғын үйлерде бұрғылау кезінде шаң мен кірден қорқу жиі кездеседі.',
-                solution: 'Сумен салқындату және су жинау жүйесі арқылы шаңсыз әрі таза жұмыс істейміз.'
-              }
-            ]
-          },
-          cutting: {
-            breadcrumb: 'Бетонды алмазды кесу',
-            badge: 'Қызмет 02 · Соққысыз дискілі кесу',
-            title: 'Астанада бетонды алмазды кесу',
-            lead: 'Бетонды кәсіби дискілі алмазды кесу. Есік, терезе және технологиялық ойықтарды, сондай-ақ бетон қабырғалар мен жабындарын соққысыз әрі тегіс жиекпен дәл кесеміз.',
-            specs: [
-              { label: 'Негізгі технология', value: 'ДИСКІЛІ КЕСУ', sub: 'Бетонды соққысыз түзу әрі таза кесу' },
-              { label: 'Материал', value: 'БЕТОН', sub: 'Бетон қабырғаларды, ойықтарды және жабындарды кесу' },
-              { label: 'Кесу жиегі', value: 'ТЕГІС ГЕОМЕТРИЯ', sub: 'Қосымша сылау мен түзетуді қажет етпейді' },
-              { label: 'Қауіпсіздік', value: 'ЖАРЫҚШАҚСЫЗ', sub: 'Дірілдің болмауы қабырға беріктігін сақтайды' }
-            ],
-            scope: [
-              {
-                title: 'Есік және терезе ойықтарын дискілі кесу',
-                desc: 'Бетон қабырғаларда жаңа ойықтар ашу немесе бұрынғы ойықтарды кеңейту.'
-              },
-              {
-                title: 'Бетон жабындарын, едендер мен тігістерді кесу',
-                desc: 'Баспалдақ, лифт шахтасы, желдету арналары мен деформациялық тігістерді кесу.'
-              },
-              {
-                title: 'Бетон конструкцияларын соққысыз бөлшектеу',
-                desc: 'Бетон қабырғаларды, қалқаларды және іргетас бөліктерін дірілсіз бөліктерге кесіп алу.'
-              },
-              {
-                title: 'Технологиялық қуыстарды кесу',
-                desc: 'Электр қалқандары, сейфтер мен коллекторларға арналған бетондағы қуыстарды дәл кесу.'
-              }
-            ],
-            problems: [
-              {
-                num: '01',
-                problem: 'Соққылы құралдардан қабырғада жарықтардың пайда болуы',
-                desc: 'Перфоратор мен балғалардың дірілі бетонды әлсіретіп, жарықшақтар тудырады.',
-                solution: 'Дискілі алмазды кесу бетонды дірілсіз кесіп, ғимараттың беріктігін толық сақтайды.'
-              },
-              {
-                num: '02',
-                problem: 'Ойық шеттерінің қисық болуы',
-                desc: 'Қолмен бұзудан кейін ойық жиектері тегіс болмай, қосымша шығынды талап етеді.',
-                solution: 'Дискілі кесу есік немесе терезе орнатуға дайын түзу әрі тегіс бет қалдырады.'
-              },
-              {
-                num: '03',
-                problem: 'Ұзақ уақыт және қалың шаң',
-                desc: 'Бетонды қолмен бұзу бірнеше күнге созылып, көп шаң шығарады.',
-                solution: 'Алмазды дискіге су беру арқылы жұмысты жылдам әрі құрғақ шаңсыз орындаймыз.'
-              }
-            ]
-          }
-        }
-      };
 
-      const uiTranslations = {
-        ru: {
-          topBarSpec: 'Алмазное бурение 200 · 300 · 400 мм · Глубина до 1200 мм · Дисковая резка бетона',
-          navServices: 'Услуги',
-          navContacts: 'Контакты',
-          callbackBtn: 'Заказать звонок',
-          breadcrumbHome: 'Главная',
-          breadcrumbCurrent: 'Наши услуги',
-          heading: 'Алмазное бурение и резка бетона в Астане',
-          heroLead: 'Выполняем безударное алмазное бурение отверстий и дисковую резку бетона. Работаем аккуратно, точно в размер и с сохранением несущей способности конструкций.',
-          spec1Label: 'Диаметр отверстий',
-          spec1Value: 'ДО 400 ММ',
-          spec1Sub: 'Точные цилиндрические отверстия 200, 300 и 400 мм под инженерные сети',
-          spec2Label: 'Глубина бурения',
-          spec2Value: 'ДО 1200 ММ',
-          spec2Sub: 'Бурение бетона на глубину до 600 мм и 600–1200 мм',
-          spec3Label: 'Технология резки',
-          spec3Value: 'ДИСКОВАЯ РЕЗКА',
-          spec3Sub: 'Ровные проёмы в бетонных стенах и перекрытиях без трещин и вибраций',
-          tabAllTitle: 'Все направления (2)',
-          tabDrillingTitle: 'Алмазное бурение бетона',
-          tabCuttingTitle: 'Алмазная резка бетона',
-          sectionTitle: 'Бурение и резка бетона',
-          titleDrilling: 'Алмазное бурение бетона',
-          descDrilling: 'Профессионально бурим отверстия в бетоне под вентиляцию, сантехнику, отопление и инженерные сети. Диаметр отверстий — 200, 300 и до 400 мм, глубина — до 1200 мм (до 600 мм и 600–1200 мм). Работаем точно и аккуратно, без сколов и трещин.',
-          titleCutting: 'Алмазная резка бетона',
-          descCutting: 'Выполняем дисковую алмазную резку бетона. Делаем дверные, оконные и технологические проёмы в несущих и ненесущих бетонных стенах, режем перекрытия и стены — с ровной кромкой и без ударных нагрузок.',
-          moreBtn: 'Подробнее об услуге',
-          orderCalcBtn: 'Заказать расчёт',
-          formTitle: 'Оставьте заявку на расчёт',
-          formSubtitle: 'Перезвоним в течение 5 минут, уточним задачу по вашему объекту или примем параметры в WhatsApp.',
-          labelName: 'Имя',
-          labelPhone: 'Телефон',
-          labelTask: 'Что нужно сделать',
-          consent: 'Согласен на обработку персональных данных',
-          submit: 'Заказать расчёт',
-          footerDesc: 'Профессиональные услуги алмазного бурения и дисковой алмазной резки бетона в Астане.'
-        },
-        kz: {
-          topBarSpec: '200 · 300 · 400 мм алмазды бұрғылау · Тереңдігі 1200 мм дейін · Бетонды дискілі кесу',
-          navServices: 'Қызметтер',
-          navContacts: 'Байланыс',
-          callbackBtn: 'Қоңырау шалу',
-          breadcrumbHome: 'Басты бет',
-          breadcrumbCurrent: 'Біздің қызметтер',
-          heading: 'Астанада бетонды алмазды бұрғылау және кесу',
-          heroLead: 'Бетонды соққысыз алмазды бұрғылау және дискілі кесу. Конструкциялардың беріктігін сақтай отырып, дәл әрі ұқыпты орындаймыз.',
-          spec1Label: 'Саңылау диаметрі',
-          spec1Value: '400 ММ ДЕЙІН',
-          spec1Sub: 'Инженерлік желілерге арналған 200, 300 және 400 мм саңылаулар',
-          spec2Label: 'Бұрғылау тереңдігі',
-          spec2Value: '1200 ММ ДЕЙІН',
-          spec2Sub: 'Бетонды 600 мм дейін және 600–1200 мм тереңдікте бұрғылау',
-          spec3Label: 'Кесу технологиясы',
-          spec3Value: 'ДИСКІЛІ КЕСУ',
-          spec3Sub: 'Бетон қабырғалар мен жабындарда жарықшақсыз тегіс ойықтар',
-          tabAllTitle: 'Барлық бағыттар (2)',
-          tabDrillingTitle: 'Бетонды алмазды бұрғылау',
-          tabCuttingTitle: 'Бетонды алмазды кесу',
-          sectionTitle: 'Бетонды бұрғылау және кесу',
-          titleDrilling: 'Бетонды алмазды бұрғылау',
-          descDrilling: 'Желдету, сантехника, жылыту және инженерлік желілерге арналған бетон саңылауларын кәсіби алмазды бұрғылау. Саңылау диаметрі — 200, 300 және 400 мм-ге дейін, тереңдігі — 1200 мм-ге дейін (600–1200 мм). Жұмысты дәл әрі ұқыпты орындаймыз.',
-          titleCutting: 'Бетонды алмазды кесу',
-          descCutting: 'Бетонды дискілі алмазды кесу. Есік, терезе және технологиялық ойықтарды, сондай-ақ бетон қабырғалар мен жабындарын ұқыпты әрі дәл кесеміз.',
-          moreBtn: 'Толығырақ ашу',
-          orderCalcBtn: 'Есептеуге тапсырыс',
-          formTitle: 'Есептеуге өтінім қалдырыңыз',
-          formSubtitle: '5 минут ішінде хабарласып, нысан бойынша тапсырманы нақтылаймыз немесе WhatsApp арқылы қабылдаймыз.',
-          labelName: 'Атыңыз',
-          labelPhone: 'Телефон',
-          labelTask: 'Не істеу керек',
-          consent: 'Дербес деректерді өңдеуге келісемін',
-          submit: 'Есептеуге жіберу',
-          footerDesc: 'Астанада бетонды кәсіби алмазды бұрғылау және дискілі алмазды кесу қызметтері.'
-        }
       };
 
       function buildWhatsAppUrl(serviceName, city, extraInfo) {
@@ -1531,7 +1582,7 @@
       function renderDedicatedServicePage(serviceKey) {
         activeServicePage = serviceKey;
         activeSubpagePhotoIndex = 0;
-        const data = servicePagesData[currentLang][serviceKey];
+        const data = servicePagesData.ru[serviceKey];
         const photos = realWebPhotos[serviceKey];
 
         document.getElementById('subpageBreadcrumbCurrent').textContent = data.breadcrumb;
@@ -1556,11 +1607,11 @@
         specsGrid.innerHTML = '';
         data.specs.forEach((s) => {
           const div = document.createElement('div');
-          div.className = 'bg-[#F7F5EF] dark:bg-[#1C2420] border border-[#E6E2D9] dark:border-slate-800 rounded-[14px] p-3.5';
+          div.className = 'sp-spec-card bg-[#F7F5EF] dark:bg-[#1C2420] border border-[#E6E2D9] dark:border-slate-800 rounded-[14px] p-3.5';
           div.innerHTML = `
-            <span class="block text-[11px] font-bold uppercase tracking-wider text-[#A86849]">${s.label}</span>
-            <span class="font-stretched text-[16px] sm:text-[18px] font-bold text-[#2B3732] dark:text-white mt-0.5 block">${s.value}</span>
-            <span class="block text-[12px] text-[#55615A] dark:text-slate-300 mt-1">${s.sub}</span>
+            <span class="sp-spec-label block text-[11px] font-bold uppercase tracking-wider text-[#A86849]">${s.label}</span>
+            <span class="sp-spec-value font-stretched text-[16px] sm:text-[18px] font-bold text-[#2B3732] dark:text-white mt-0.5 block">${s.value}</span>
+            <span class="sp-spec-sub block text-[12px] text-[#55615A] dark:text-slate-300 mt-1">${s.sub}</span>
           `;
           specsGrid.appendChild(div);
         });
@@ -1589,16 +1640,18 @@
         const scopeGrid = document.getElementById('spScopeGrid');
         scopeGrid.innerHTML = '';
         data.scope.forEach((item) => {
-          const card = document.createElement('div');
-          card.className = 'bg-white dark:bg-[#151B18] rounded-[16px] border border-[#E6E2D9] dark:border-slate-800 p-5 sm:p-6';
+          const card = document.createElement('details');
+          card.className = 'sp-mobile-accordion bg-white dark:bg-[#151B18] rounded-[16px] border border-[#E6E2D9] dark:border-slate-800 p-5 sm:p-6';
+          card.open = serviceDesktopLayout.matches;
           card.innerHTML = `
-            <div class="flex items-start gap-3">
+            <summary class="flex items-start gap-3">
               <span class="w-2.5 h-2.5 rounded-full bg-[#A86849] mt-2 shrink-0"></span>
-              <div>
+              <div class="min-w-0 flex-1">
                 <h3 class="text-[16px] sm:text-[17px] font-bold text-[#2B3732] dark:text-white">${item.title}</h3>
-                <p class="text-[13px] sm:text-[14px] text-[#55615A] dark:text-slate-300 mt-1.5 leading-relaxed">${item.desc}</p>
               </div>
-            </div>
+              <svg class="sp-accordion-chevron hidden" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m5 7.5 5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <p class="sp-mobile-detail pl-[22px] text-[13px] sm:text-[14px] text-[#55615A] dark:text-slate-300 mt-1.5 leading-relaxed">${item.desc}</p>
           `;
           scopeGrid.appendChild(card);
         });
@@ -1607,17 +1660,23 @@
         const problemsGrid = document.getElementById('spProblemsGrid');
         problemsGrid.innerHTML = '';
         data.problems.forEach((p) => {
-          const card = document.createElement('div');
-          card.className = 'bg-white dark:bg-[#1C2420] rounded-[18px] border border-[#E6E2D9] dark:border-slate-800 p-5 sm:p-6 flex flex-col justify-between';
+          const card = document.createElement('details');
+          card.className = 'sp-mobile-accordion bg-white dark:bg-[#1C2420] rounded-[18px] border border-[#E6E2D9] dark:border-slate-800 p-5 sm:p-6';
+          card.open = serviceDesktopLayout.matches;
           card.innerHTML = `
-            <div>
-              <span class="font-stretched text-[12px] font-bold text-[#A86849]">ПРОБЛЕМА ${p.num}</span>
-              <h3 class="text-[16px] sm:text-[17px] font-bold text-[#2B3732] dark:text-white mt-2">${p.problem}</h3>
+            <summary>
+              <div class="min-w-0 flex-1">
+                <span class="font-stretched text-[12px] font-bold text-[#A86849]">ПРОБЛЕМА ${p.num}</span>
+                <h3 class="text-[16px] sm:text-[17px] font-bold text-[#2B3732] dark:text-white mt-2">${p.problem}</h3>
+              </div>
+              <svg class="sp-accordion-chevron hidden" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m5 7.5 5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="sp-mobile-detail-inner">
               <p class="text-[13px] text-[#74766F] dark:text-slate-400 mt-2 leading-relaxed">${p.desc}</p>
-            </div>
-            <div class="mt-4 pt-4 border-t border-[#E6E2D9] dark:border-slate-800">
-              <span class="block text-[11px] font-bold uppercase tracking-wider text-[#2B3732] dark:text-[#A86849]">Что предлагаем мы:</span>
-              <p class="text-[13px] sm:text-[14px] font-medium text-[#2B3732] dark:text-slate-200 mt-1 leading-relaxed">${p.solution}</p>
+              <div class="mt-4 pt-4 border-t border-[#E6E2D9] dark:border-slate-800">
+                <span class="block text-[11px] font-bold uppercase tracking-wider text-[#2B3732] dark:text-[#A86849]">Что предлагаем мы:</span>
+                <p class="text-[13px] sm:text-[14px] font-medium text-[#2B3732] dark:text-slate-200 mt-1 leading-relaxed">${p.solution}</p>
+              </div>
             </div>
           `;
           problemsGrid.appendChild(card);
@@ -1719,81 +1778,6 @@
         moonIcon.classList.toggle('hidden', isDark);
         sunIcon.classList.toggle('hidden', !isDark);
       });
-
-      // Language Switcher (РУС / ҚАЗ)
-      const langRusBtn = document.getElementById('langRusBtn');
-      const langKazBtn = document.getElementById('langKazBtn');
-
-      function applyLanguage(lang) {
-        currentLang = lang;
-        const t = uiTranslations[lang];
-
-        if (lang === 'ru') {
-          langRusBtn.className = 'px-3 py-1 rounded-full text-[11px] font-bold bg-white text-[#29342F] transition-all';
-          langKazBtn.className = 'px-3 py-1 rounded-full text-[11px] font-semibold text-white/80 hover:text-white transition-all';
-        } else {
-          langKazBtn.className = 'px-3 py-1 rounded-full text-[11px] font-bold bg-white text-[#29342F] transition-all';
-          langRusBtn.className = 'px-3 py-1 rounded-full text-[11px] font-semibold text-white/80 hover:text-white transition-all';
-        }
-
-        document.getElementById('topBarSpec').textContent = t.topBarSpec;
-        navServices.textContent = t.navServices;
-        navContacts.textContent = t.navContacts;
-        document.getElementById('mobileHeaderServicesLink').textContent = t.navServices;
-        document.getElementById('mobileHeaderContactsLink').textContent = t.navContacts;
-        document.getElementById('headerCallbackBtn').textContent = t.callbackBtn;
-        document.getElementById('breadcrumbHome').textContent = t.breadcrumbHome;
-        document.getElementById('breadcrumbCurrent').textContent = t.breadcrumbCurrent;
-        document.getElementById('mainPageHeading').textContent = t.heading;
-        document.getElementById('heroLeadText').textContent = t.heroLead;
-
-        document.getElementById('spec1Label').textContent = t.spec1Label;
-        document.getElementById('spec1Value').textContent = t.spec1Value;
-        document.getElementById('spec1Sub').textContent = t.spec1Sub;
-        document.getElementById('spec2Label').textContent = t.spec2Label;
-        document.getElementById('spec2Value').textContent = t.spec2Value;
-        document.getElementById('spec2Sub').textContent = t.spec2Sub;
-        document.getElementById('spec3Label').textContent = t.spec3Label;
-        document.getElementById('spec3Value').textContent = t.spec3Value;
-        document.getElementById('spec3Sub').textContent = t.spec3Sub;
-
-        document.getElementById('tabAllTitle').textContent = t.tabAllTitle;
-        document.getElementById('tabDrillingTitle').textContent = t.tabDrillingTitle;
-        document.getElementById('tabCuttingTitle').textContent = t.tabCuttingTitle;
-
-        document.getElementById('servicesSectionTitle').textContent = t.sectionTitle;
-        document.getElementById('titleDrilling').textContent = t.titleDrilling;
-        document.getElementById('descDrilling').textContent = t.descDrilling;
-        document.getElementById('titleCutting').textContent = t.titleCutting;
-        document.getElementById('descCutting').textContent = t.descCutting;
-
-        document.querySelectorAll('.details-btn-text').forEach((el) => {
-          el.textContent = t.moreBtn;
-        });
-        document.querySelectorAll('.order-calc-text').forEach((el) => {
-          el.textContent = t.orderCalcBtn;
-        });
-
-        document.getElementById('formSectionTitle').textContent = t.formTitle;
-        document.getElementById('formSectionSubtitle').textContent = t.formSubtitle;
-        document.getElementById('labelInlineName').textContent = t.labelName;
-        document.getElementById('labelInlinePhone').textContent = t.labelPhone;
-        document.getElementById('labelInlineService').textContent = t.labelTask;
-        document.getElementById('consentTextInline').textContent = t.consent;
-        document.getElementById('inlineSubmitBtn').textContent = t.submit;
-        document.getElementById('footerDescription').textContent = t.footerDesc;
-        document.getElementById('footerServicesHeading').textContent = t.navServices;
-        document.getElementById('footerContactsHeading').textContent = t.navContacts;
-        document.getElementById('footerLinkDrilling').textContent = t.tabDrillingTitle;
-        document.getElementById('footerLinkCutting').textContent = t.tabCuttingTitle;
-
-        if (activeServicePage) {
-          renderDedicatedServicePage(activeServicePage);
-        }
-      }
-
-      langRusBtn.addEventListener('click', () => applyLanguage('ru'));
-      langKazBtn.addEventListener('click', () => applyLanguage('kz'));
 
       // Callback / Order Calculation Modal logic
       const callbackModal = document.getElementById('callbackModal');
