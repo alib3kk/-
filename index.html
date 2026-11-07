@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Алмазное бурение и резка бетона в Астане и по Казахстану</title>
+  <title>Алмазное бурение и резка бетона в Астане</title>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,10 +18,10 @@
           },
           colors: {
             brand: {
-              navy: '#0E1726',
-              orange: '#E86C17',
-              orangeHover: '#D35D0E',
-              orangeLight: '#FDF1E8',
+              navy: '#2B3732',
+              orange: '#A86849',
+              orangeHover: '#8E573D',
+              orangeLight: '#F3EAE3',
             }
           }
         }
@@ -31,18 +31,18 @@
   <style>
     body {
       font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
-      color: #0E1726;
-      background-color: #FFFFFF;
+      color: #2B3732;
+      background-color: #FBFAF7;
       -webkit-font-smoothing: antialiased;
     }
     .dark body {
       color: #F8FAFC;
-      background-color: #0B111E;
+      background-color: #151B18;
     }
-    /* Custom select chevron matching enstroy.kz */
+    /* Custom select chevron */
     .city-select {
       appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230E1726' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%232B3732' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: right 14px center;
       background-size: 15px;
@@ -50,10 +50,10 @@
     .dark .city-select {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23F8FAFC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
     }
-    /* Active nav underline matching screenshot 2 */
+    /* Active nav underline */
     .nav-link-active {
       position: relative;
-      color: #0E1726;
+      color: #2B3732;
     }
     .dark .nav-link-active {
       color: #FFFFFF;
@@ -65,18 +65,18 @@
       right: 0;
       bottom: -7px;
       height: 2px;
-      background-color: #E86C17;
+      background-color: #A86849;
       border-radius: 1px;
     }
   </style>
 </head>
-<body class="bg-white dark:bg-[#0B111E] text-[#0E1726] dark:text-slate-100 transition-colors duration-200">
+<body class="bg-[#FBFAF7] dark:bg-[#151B18] text-[#2B3732] dark:text-slate-100 transition-colors duration-200">
 
-  <!-- TOP DARK BAR (Language Switcher as in reference screenshot) -->
-  <div class="bg-[#0D1526] text-white text-xs">
+  <!-- TOP BAR (Language Switcher) -->
+  <div class="bg-[#29342F] text-white text-xs">
     <div class="max-w-[1220px] mx-auto px-4 sm:px-6 h-10 flex items-center justify-end">
-      <div class="inline-flex items-center bg-[#182235] rounded-full p-0.5 border border-white/10">
-        <button type="button" id="langRusBtn" class="px-3 py-1 rounded-full text-[11px] font-bold bg-white text-[#0D1526] transition-all">
+      <div class="inline-flex items-center bg-[#3A443F] rounded-full p-0.5 border border-white/10">
+        <button type="button" id="langRusBtn" class="px-3 py-1 rounded-full text-[11px] font-bold bg-white text-[#29342F] transition-all">
           РУС
         </button>
         <button type="button" id="langKazBtn" class="px-3 py-1 rounded-full text-[11px] font-semibold text-white/80 hover:text-white transition-all">
@@ -86,53 +86,28 @@
     </div>
   </div>
 
-  <!-- MAIN HEADER (1:1 structure with enstroy.kz screenshot) -->
-  <header class="sticky top-0 z-40 bg-white/95 dark:bg-[#0B111E]/95 backdrop-blur border-b border-slate-100 dark:border-slate-800/80">
+  <!-- MAIN HEADER -->
+  <header class="sticky top-0 z-40 bg-[#FBFAF7]/95 dark:bg-[#151B18]/95 border-b border-[#E6E2D9] dark:border-slate-800/80">
     <div class="max-w-[1220px] mx-auto px-4 sm:px-6 h-[82px] flex items-center justify-between gap-4">
       
-      <!-- Left: Logo ("Алмазное бурение" in the exact EN STROY font and drill-rig emblem style) -->
-      <a href="#top" id="logoLink" class="flex items-center gap-2.5 group shrink-0 focus:outline-none">
-        <!-- Core Drill Rig Icon SVG -->
-        <svg class="w-9 h-10 shrink-0" viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Drill Crown & Stand -->
-          <rect x="7" y="2" width="10" height="4" rx="1" fill="#0E1726" class="dark:fill-white"/>
-          <rect x="11" y="6" width="2.5" height="6" fill="#0E1726" class="dark:fill-white"/>
-          <path d="M6 12H18V33L12 41L6 33V12Z" fill="#0E1726" class="dark:fill-white"/>
-          <!-- Diagonal Orange Core Slots -->
-          <path d="M8 17L16 14.5V18L8 20.5V17Z" fill="#E86C17"/>
-          <path d="M8 23.5L16 21V24.5L8 27V23.5Z" fill="#E86C17"/>
-          <path d="M8 30L16 27.5V31L8 33.5V30Z" fill="#E86C17"/>
-          <!-- Orange Lightning / Slash Accent -->
-          <path d="M21 7L29 22H24L29 38L18 21H23L21 7Z" fill="#E86C17"/>
-        </svg>
-        <div class="flex flex-col leading-none">
-          <span class="text-[18px] sm:text-[20px] font-extrabold uppercase tracking-[-0.03em] text-[#0E1726] dark:text-white">
-            АЛМАЗНОЕ
-          </span>
-          <span class="text-[13px] sm:text-[14px] font-extrabold uppercase tracking-[0.06em] text-[#E86C17] mt-0.5">
-            БУРЕНИЕ
-          </span>
-        </div>
-      </a>
-
-      <!-- Center: Navigation (Only "Услуги" and "Контакты" as requested) -->
-      <nav class="hidden md:flex items-center gap-9" aria-label="Основная навигация">
-        <a href="#services" id="navServices" data-nav="services" class="nav-link-active text-[15px] font-medium text-[#0E1726] dark:text-white hover:text-[#E86C17] transition-colors">
+      <!-- Main navigation -->
+      <nav class="hidden md:flex items-center gap-8 mr-auto" aria-label="Основная навигация">
+        <a href="#services" id="navServices" data-nav="services" class="nav-link-active text-[15px] font-medium text-[#2B3732] dark:text-white hover:text-[#A86849] transition-colors">
           Услуги
         </a>
-        <a href="#contacts" id="navContacts" data-nav="contacts" class="text-[15px] font-normal text-[#334155] dark:text-slate-300 hover:text-[#0E1726] dark:hover:text-white transition-colors">
+        <a href="#contacts" id="navContacts" data-nav="contacts" class="text-[15px] font-normal text-[#4B5751] dark:text-slate-300 hover:text-[#2B3732] dark:hover:text-white transition-colors">
           Контакты
         </a>
       </nav>
 
       <!-- Right: Phone (without working hours), Theme Toggle, and "Заказать звонок" CTA -->
       <div class="flex items-center gap-4 sm:gap-5">
-        <a href="tel:+77052675327" class="hidden sm:block text-[15px] lg:text-[16px] font-bold text-[#0E1726] dark:text-white hover:text-[#E86C17] dark:hover:text-[#E86C17] transition-colors tracking-tight">
-          +7 705 267 5327
+        <a href="tel:+77058153208" class="hidden sm:block text-[15px] lg:text-[16px] font-bold text-[#2B3732] dark:text-white hover:text-[#A86849] dark:hover:text-[#A86849] transition-colors tracking-tight">
+          +7 705 815 32 08
         </a>
 
-        <!-- Moon / Sun Theme Toggle (matching screenshot 1) -->
-        <button type="button" id="themeToggleBtn" aria-label="Переключить тему" class="w-9 h-9 rounded-full flex items-center justify-center text-[#334155] dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+        <!-- Moon / Sun Theme Toggle -->
+        <button type="button" id="themeToggleBtn" aria-label="Переключить тему" class="w-9 h-9 rounded-full flex items-center justify-center text-[#4B5751] dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
           <svg id="moonIcon" class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
@@ -150,12 +125,12 @@
         </button>
 
         <!-- Primary CTA Button -->
-        <button type="button" id="headerCallbackBtn" class="bg-[#E86C17] hover:bg-[#D35D0E] text-white text-[13px] sm:text-[14px] font-semibold px-5 sm:px-6 py-3 rounded-[10px] transition-colors shadow-sm">
+        <button type="button" id="headerCallbackBtn" class="bg-[#A86849] hover:bg-[#8E573D] text-white text-[13px] sm:text-[14px] font-semibold px-5 sm:px-6 py-3 rounded-[10px] transition-colors shadow-sm">
           Заказать звонок
         </button>
 
         <!-- Mobile Menu Button -->
-        <button type="button" id="mobileMenuBtn" aria-label="Открыть меню" class="md:hidden w-10 h-10 rounded-lg border border-slate-200 dark:border-slate-700 flex items-center justify-center text-[#0E1726] dark:text-white">
+        <button type="button" id="mobileMenuBtn" aria-label="Открыть меню" class="md:hidden w-10 h-10 rounded-lg border border-slate-200 dark:border-slate-700 flex items-center justify-center text-[#2B3732] dark:text-white">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
@@ -164,27 +139,27 @@
     </div>
 
     <!-- Mobile Navigation Drawer -->
-    <div id="mobileMenuDrawer" class="hidden md:hidden border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-[#0B111E] px-4 py-4 space-y-3">
+    <div id="mobileMenuDrawer" class="hidden md:hidden border-t border-slate-100 dark:border-slate-800 bg-[#FBFAF7] dark:bg-[#151B18] px-4 py-4 space-y-3">
       <div class="flex flex-col space-y-2.5">
-        <a href="#services" id="mobileNavServices" class="text-[15px] font-semibold text-[#E86C17] py-1">Услуги</a>
-        <a href="#contacts" id="mobileNavContacts" class="text-[15px] font-medium text-[#0E1726] dark:text-white py-1">Контакты</a>
+        <a href="#services" id="mobileNavServices" class="text-[15px] font-semibold text-[#A86849] py-1">Услуги</a>
+        <a href="#contacts" id="mobileNavContacts" class="text-[15px] font-medium text-[#2B3732] dark:text-white py-1">Контакты</a>
       </div>
       <div class="pt-2 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-        <a href="tel:+77052675327" class="text-[15px] font-bold text-[#0E1726] dark:text-white">+7 705 267 5327</a>
-        <a href="https://wa.me/77052675327" target="_blank" rel="noopener noreferrer" class="text-[13px] font-semibold text-[#25D366]">WhatsApp →</a>
+        <a href="tel:+77058153208" class="text-[15px] font-bold text-[#2B3732] dark:text-white">+7 705 815 32 08</a>
+        <a href="https://wa.me/77058153208" target="_blank" rel="noopener noreferrer" class="text-[13px] font-semibold text-[#25D366]">WhatsApp →</a>
       </div>
     </div>
   </header>
 
-  <!-- HERO / TITLE & CITY SELECTOR SECTION (1:1 layout with enstroy.kz/nashi-uslugi) -->
-  <section id="top" class="border-b border-[#E2E8F0] dark:border-slate-800">
+  <!-- HERO / TITLE & CITY SELECTOR SECTION -->
+  <section id="top" class="bg-[#F7F5EF] border-b border-[#E6E2D9] dark:bg-[#151B18] dark:border-slate-800">
     <div class="max-w-[1220px] mx-auto px-4 sm:px-6 pt-8 pb-9">
       
       <!-- Breadcrumb -->
       <nav aria-label="Breadcrumb" class="text-[13px] mb-5 flex items-center gap-1.5">
-        <a href="#top" id="breadcrumbHome" class="text-[#64748B] hover:text-[#0E1726] dark:hover:text-white transition-colors">Главная</a>
-        <span class="text-[#94A3B8]">/</span>
-        <span id="breadcrumbCurrent" class="text-[#0E1726] dark:text-slate-200 font-medium">Наши услуги</span>
+        <a href="#top" id="breadcrumbHome" class="text-[#74766F] hover:text-[#2B3732] dark:hover:text-white transition-colors">Главная</a>
+        <span class="text-[#A5A39A]">/</span>
+        <span id="breadcrumbCurrent" class="text-[#2B3732] dark:text-slate-200 font-medium">Наши услуги</span>
       </nav>
 
       <!-- Main Heading + City Selector Grid -->
@@ -192,19 +167,19 @@
         
         <!-- Left 8 columns: H1 + Category Filter Pills -->
         <div class="lg:col-span-8">
-          <h1 id="mainPageHeading" class="text-[28px] sm:text-[36px] lg:text-[40px] font-bold text-[#0E1726] dark:text-white leading-[1.2] tracking-[-0.02em]">
-            Алмазное бурение и резка бетона в Астане и по Казахстану
+          <h1 id="mainPageHeading" class="text-[28px] sm:text-[36px] lg:text-[40px] font-bold text-[#2B3732] dark:text-white leading-[1.2] tracking-[-0.02em]">
+            Алмазное бурение и резка бетона в Астане
           </h1>
 
-          <!-- Filter Pills (Matching screenshot 1 style: "Все", "Алмазное бурение бетона", "Алмазная резка бетона") -->
+          <!-- Service filters -->
           <div class="mt-6 flex flex-wrap items-center gap-2.5" role="tablist" aria-label="Фильтр услуг">
-            <button type="button" data-filter="all" id="filterAllBtn" class="filter-pill px-4 py-1.5 rounded-full text-[13px] font-medium border transition-all bg-[#0E1726] text-white border-[#0E1726] dark:bg-white dark:text-[#0E1726] dark:border-white">
+            <button type="button" data-filter="all" id="filterAllBtn" class="filter-pill px-4 py-1.5 rounded-full text-[13px] font-medium border transition-all bg-[#A86849] text-white border-[#A86849] dark:bg-[#A86849] dark:text-white dark:border-[#A86849]">
               Все
             </button>
-            <button type="button" data-filter="drilling" id="filterDrillingBtn" class="filter-pill px-4 py-1.5 rounded-full text-[13px] font-normal border transition-all bg-white dark:bg-slate-900 text-[#475569] dark:text-slate-300 border-[#CBD5E1] dark:border-slate-700 hover:border-[#0E1726] dark:hover:border-slate-400">
+            <button type="button" data-filter="drilling" id="filterDrillingBtn" class="filter-pill px-4 py-1.5 rounded-full text-[13px] font-normal border transition-all bg-white dark:bg-slate-900 text-[#55615A] dark:text-slate-300 border-[#D8D7CF] dark:border-slate-700 hover:border-[#A86849] dark:hover:border-slate-400">
               Алмазное бурение бетона
             </button>
-            <button type="button" data-filter="cutting" id="filterCuttingBtn" class="filter-pill px-4 py-1.5 rounded-full text-[13px] font-normal border transition-all bg-white dark:bg-slate-900 text-[#475569] dark:text-slate-300 border-[#CBD5E1] dark:border-slate-700 hover:border-[#0E1726] dark:hover:border-slate-400">
+            <button type="button" data-filter="cutting" id="filterCuttingBtn" class="filter-pill px-4 py-1.5 rounded-full text-[13px] font-normal border transition-all bg-white dark:bg-slate-900 text-[#55615A] dark:text-slate-300 border-[#D8D7CF] dark:border-slate-700 hover:border-[#A86849] dark:hover:border-slate-400">
               Алмазная резка бетона
             </button>
           </div>
@@ -212,35 +187,14 @@
 
         <!-- Right 4 columns: City Dropdown -->
         <div class="lg:col-span-4 w-full max-w-[360px] lg:ml-auto">
-          <label for="citySelect" id="citySelectLabel" class="block text-[13px] font-bold text-[#0E1726] dark:text-white mb-2">
-            Выберите подходящий для вас город
+          <label for="citySelect" id="citySelectLabel" class="block text-[13px] font-bold text-[#2B3732] dark:text-white mb-2">
+            Город выезда
           </label>
-          <select id="citySelect" class="city-select w-full rounded-[10px] border border-[#CBD5E1] dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-2.5 pr-10 text-[14px] text-[#0E1726] dark:text-white focus:outline-none focus:border-[#E86C17] transition-colors cursor-pointer">
+          <select id="citySelect" class="city-select w-full rounded-[10px] border border-[#D8D7CF] dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-2.5 pr-10 text-[14px] text-[#2B3732] dark:text-white focus:outline-none focus:border-[#A86849] transition-colors cursor-pointer">
             <option value="Астана">Астана</option>
-            <option value="Алматы">Алматы</option>
-            <option value="Шымкент">Шымкент</option>
-            <option value="Актобе">Актобе</option>
-            <option value="Караганда">Караганда</option>
-            <option value="Тараз">Тараз</option>
-            <option value="Усть-Каменогорск">Усть-Каменогорск</option>
-            <option value="Павлодар">Павлодар</option>
-            <option value="Атырау">Атырау</option>
-            <option value="Семей">Семей</option>
-            <option value="Кызылорда">Кызылорда</option>
-            <option value="Актау">Актау</option>
-            <option value="Костанай">Костанай</option>
-            <option value="Уральск">Уральск</option>
-            <option value="Туркестан">Туркестан</option>
-            <option value="Петропавловск">Петропавловск</option>
-            <option value="Кокшетау">Кокшетау</option>
-            <option value="Темиртау">Темиртау</option>
-            <option value="Талдыкорган">Талдыкорган</option>
-            <option value="Экибастуз">Экибастуз</option>
-            <option value="Рудный">Рудный</option>
-            <option value="Конаев">Конаев</option>
           </select>
-          <p id="citySelectHelper" class="text-[12px] text-[#64748B] dark:text-slate-400 mt-1.5">
-            Откроется версия услуг для выбранного города
+          <p id="citySelectHelper" class="text-[12px] text-[#74766F] dark:text-slate-400 mt-1.5">
+            Выезжаем по Астане
           </p>
         </div>
 
@@ -252,11 +206,11 @@
   <main id="services" class="py-10 sm:py-14">
     <div class="max-w-[1220px] mx-auto px-4 sm:px-6">
       
-      <h2 id="servicesSectionTitle" class="text-[24px] sm:text-[28px] font-bold text-[#0E1726] dark:text-white tracking-[-0.015em] mb-7">
+      <h2 id="servicesSectionTitle" class="text-[24px] sm:text-[28px] font-bold text-[#2B3732] dark:text-white tracking-[-0.015em] mb-7">
         Бурение, сверление и резка
       </h2>
 
-      <!-- 2-Column Service Cards Grid (Matching enstroy.kz/nashi-uslugi) -->
+      <!-- Service Cards Grid -->
       <div id="servicesGrid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
         
         <!-- Card 1: Алмазное бурение бетона -->
@@ -270,21 +224,21 @@
           </div>
           <div class="pt-5 flex-1 flex flex-col justify-between">
             <div>
-              <h3 id="titleDrilling" class="text-[20px] sm:text-[22px] font-bold text-[#0E1726] dark:text-white group-hover:text-[#E86C17] transition-colors cursor-pointer">
+              <h3 id="titleDrilling" class="text-[20px] sm:text-[22px] font-bold text-[#2B3732] dark:text-white group-hover:text-[#A86849] transition-colors cursor-pointer">
                 Алмазное бурение бетона
               </h3>
-              <p id="descDrilling" class="text-[14px] sm:text-[15px] text-[#475569] dark:text-slate-300 leading-relaxed mt-2.5">
+              <p id="descDrilling" class="text-[14px] sm:text-[15px] text-[#55615A] dark:text-slate-300 leading-relaxed mt-2.5">
                 Профессиональное алмазное бурение точных отверстий в бетоне, железобетоне и кирпиче под вентиляцию, сантехнику, отопление и инженерные сети. Высокая точность и минимальные повреждения материала.
               </p>
             </div>
             <div class="mt-5 flex flex-wrap items-center gap-3">
-              <button type="button" id="detailsBtnDrilling" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-[10px] bg-[#F1F5F9] dark:bg-slate-800 hover:bg-[#E86C17] hover:text-white text-[#0E1726] dark:text-white text-[14px] font-semibold transition-colors">
+              <button type="button" id="detailsBtnDrilling" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-[10px] bg-[#F1EEE8] dark:bg-slate-800 hover:bg-[#A86849] hover:text-white text-[#2B3732] dark:text-white text-[14px] font-semibold transition-colors">
                 <span class="details-btn-text">Подробнее</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
                 </svg>
               </button>
-              <a id="waLinkDrilling" href="https://wa.me/77052675327?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%B0%D0%BB%D0%BC%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5%20%D0%B1%D1%83%D1%80%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0%20(%D0%B3.%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0)." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-[10px] border border-[#CBD5E1] dark:border-slate-700 hover:border-[#25D366] text-[#0E1726] dark:text-slate-200 text-[14px] font-medium transition-colors">
+              <a id="waLinkDrilling" href="https://wa.me/77058153208?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%B0%D0%BB%D0%BC%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5%20%D0%B1%D1%83%D1%80%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0%20(%D0%B3.%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0)." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-[10px] border border-[#D8D7CF] dark:border-slate-700 hover:border-[#25D366] text-[#2B3732] dark:text-slate-200 text-[14px] font-medium transition-colors">
                 <svg class="w-4 h-4 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.124 1.533 5.861l-1.533 5.602 5.735-1.504c1.693.924 3.633 1.449 5.698 1.449 6.627 0 12-5.373 12-12s-5.373-12-11.433-11.408z"/>
                 </svg>
@@ -305,21 +259,21 @@
           </div>
           <div class="pt-5 flex-1 flex flex-col justify-between">
             <div>
-              <h3 id="titleCutting" class="text-[20px] sm:text-[22px] font-bold text-[#0E1726] dark:text-white group-hover:text-[#E86C17] transition-colors cursor-pointer">
+              <h3 id="titleCutting" class="text-[20px] sm:text-[22px] font-bold text-[#2B3732] dark:text-white group-hover:text-[#A86849] transition-colors cursor-pointer">
                 Алмазная резка бетона
               </h3>
-              <p id="descCutting" class="text-[14px] sm:text-[15px] text-[#475569] dark:text-slate-300 leading-relaxed mt-2.5">
+              <p id="descCutting" class="text-[14px] sm:text-[15px] text-[#55615A] dark:text-slate-300 leading-relaxed mt-2.5">
                 Точная алмазная резка бетона, железобетона и монолитных конструкций. Резка дверных и оконных проёмов в несущих и ненесущих стенах любой толщины с ровным краем, без трещин и ударных нагрузок.
               </p>
             </div>
             <div class="mt-5 flex flex-wrap items-center gap-3">
-              <button type="button" id="detailsBtnCutting" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-[10px] bg-[#F1F5F9] dark:bg-slate-800 hover:bg-[#E86C17] hover:text-white text-[#0E1726] dark:text-white text-[14px] font-semibold transition-colors">
+              <button type="button" id="detailsBtnCutting" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-[10px] bg-[#F1EEE8] dark:bg-slate-800 hover:bg-[#A86849] hover:text-white text-[#2B3732] dark:text-white text-[14px] font-semibold transition-colors">
                 <span class="details-btn-text">Подробнее</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
                 </svg>
               </button>
-              <a id="waLinkCutting" href="https://wa.me/77052675327?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%B0%D0%BB%D0%BC%D0%B0%D0%B7%D0%BD%D0%B0%D1%8F%20%D1%80%D0%B5%D0%B7%D0%BA%D0%B0%20%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0%20(%D0%B3.%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0)." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-[10px] border border-[#CBD5E1] dark:border-slate-700 hover:border-[#25D366] text-[#0E1726] dark:text-slate-200 text-[14px] font-medium transition-colors">
+              <a id="waLinkCutting" href="https://wa.me/77058153208?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%B0%D0%BB%D0%BC%D0%B0%D0%B7%D0%BD%D0%B0%D1%8F%20%D1%80%D0%B5%D0%B7%D0%BA%D0%B0%20%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%B0%20(%D0%B3.%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0)." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-[10px] border border-[#D8D7CF] dark:border-slate-700 hover:border-[#25D366] text-[#2B3732] dark:text-slate-200 text-[14px] font-medium transition-colors">
                 <svg class="w-4 h-4 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.124 1.533 5.861l-1.533 5.602 5.735-1.504c1.693.924 3.633 1.449 5.698 1.449 6.627 0 12-5.373 12-12s-5.373-12-11.433-11.408z"/>
                 </svg>
@@ -333,28 +287,28 @@
     </div>
   </main>
 
-  <!-- INLINE REQUEST / CONSULTATION SECTION (Clean enstroy.kz style) -->
-  <section class="py-10 sm:py-14 bg-[#F8FAFC] dark:bg-[#111927] border-t border-[#E2E8F0] dark:border-slate-800">
+  <!-- INLINE REQUEST / CONSULTATION SECTION -->
+  <section class="py-10 sm:py-14 bg-[#F8FAFC] dark:bg-[#111927] border-t border-[#E6E2D9] dark:border-slate-800">
     <div class="max-w-[1220px] mx-auto px-4 sm:px-6">
-      <div class="bg-white dark:bg-[#0E1726] rounded-[20px] border border-[#E2E8F0] dark:border-slate-800 p-6 sm:p-10 lg:p-12">
+      <div class="bg-white dark:bg-[#2B3732] rounded-[20px] border border-[#E6E2D9] dark:border-slate-800 p-6 sm:p-10 lg:p-12">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           <div class="lg:col-span-5">
-            <h2 id="formSectionTitle" class="text-[22px] sm:text-[26px] font-bold text-[#0E1726] dark:text-white leading-snug">
+            <h2 id="formSectionTitle" class="text-[22px] sm:text-[26px] font-bold text-[#2B3732] dark:text-white leading-snug">
               Оставьте заявку на расчёт
             </h2>
-            <p id="formSectionSubtitle" class="text-[14px] sm:text-[15px] text-[#475569] dark:text-slate-300 mt-2.5 leading-relaxed">
+            <p id="formSectionSubtitle" class="text-[14px] sm:text-[15px] text-[#55615A] dark:text-slate-300 mt-2.5 leading-relaxed">
               Перезвоним в течение 5 минут, уточним задачу по вашему объекту или примем параметры в WhatsApp.
             </p>
             <div class="mt-6 flex flex-wrap items-center gap-4">
-              <a id="directWaBannerBtn" href="https://wa.me/77052675327" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-[10px] bg-[#25D366] hover:bg-[#1EBE5B] text-white text-[14px] font-semibold transition-colors">
+              <a id="directWaBannerBtn" href="https://wa.me/77058153208" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-[10px] bg-[#25D366] hover:bg-[#1EBE5B] text-white text-[14px] font-semibold transition-colors">
                 <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.124 1.533 5.861l-1.533 5.602 5.735-1.504c1.693.924 3.633 1.449 5.698 1.449 6.627 0 12-5.373 12-12s-5.373-12-11.433-11.408z"/>
                 </svg>
                 <span>Написать в WhatsApp</span>
               </a>
-              <a href="tel:+77052675327" class="text-[16px] font-bold text-[#0E1726] dark:text-white hover:text-[#E86C17] transition-colors">
-                +7 705 267 5327
+              <a href="tel:+77058153208" class="text-[16px] font-bold text-[#2B3732] dark:text-white hover:text-[#A86849] transition-colors">
+                +7 705 815 32 08
               </a>
             </div>
           </div>
@@ -362,26 +316,26 @@
           <div class="lg:col-span-7">
             <form id="inlineLeadForm" class="grid grid-cols-1 sm:grid-cols-2 gap-4" novalidate>
               <div>
-                <label for="inlineName" id="labelInlineName" class="block text-[13px] font-semibold text-[#0E1726] dark:text-slate-200 mb-1.5">Имя</label>
-                <input type="text" id="inlineName" placeholder="Укажите имя" class="w-full rounded-[10px] border border-[#CBD5E1] dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-[14px] text-[#0E1726] dark:text-white focus:outline-none focus:border-[#E86C17]" required />
+                <label for="inlineName" id="labelInlineName" class="block text-[13px] font-semibold text-[#2B3732] dark:text-slate-200 mb-1.5">Имя</label>
+                <input type="text" id="inlineName" placeholder="Укажите имя" class="w-full rounded-[10px] border border-[#D8D7CF] dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-[14px] text-[#2B3732] dark:text-white focus:outline-none focus:border-[#A86849]" required />
               </div>
               <div>
-                <label for="inlinePhone" id="labelInlinePhone" class="block text-[13px] font-semibold text-[#0E1726] dark:text-slate-200 mb-1.5">Телефон</label>
-                <input type="tel" id="inlinePhone" placeholder="+7 705 267 53 27" class="phone-input w-full rounded-[10px] border border-[#CBD5E1] dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-[14px] text-[#0E1726] dark:text-white focus:outline-none focus:border-[#E86C17]" required />
+                <label for="inlinePhone" id="labelInlinePhone" class="block text-[13px] font-semibold text-[#2B3732] dark:text-slate-200 mb-1.5">Телефон</label>
+                <input type="tel" id="inlinePhone" placeholder="+7 xxx xxx xx xx" class="phone-input w-full rounded-[10px] border border-[#D8D7CF] dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 text-[14px] text-[#2B3732] dark:text-white focus:outline-none focus:border-[#A86849]" required />
               </div>
               <div class="sm:col-span-2">
-                <label for="inlineService" id="labelInlineService" class="block text-[13px] font-semibold text-[#0E1726] dark:text-slate-200 mb-1.5">Что нужно сделать</label>
-                <select id="inlineService" class="city-select w-full rounded-[10px] border border-[#CBD5E1] dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 pr-10 text-[14px] text-[#0E1726] dark:text-white focus:outline-none focus:border-[#E86C17]">
+                <label for="inlineService" id="labelInlineService" class="block text-[13px] font-semibold text-[#2B3732] dark:text-slate-200 mb-1.5">Что нужно сделать</label>
+                <select id="inlineService" class="city-select w-full rounded-[10px] border border-[#D8D7CF] dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 pr-10 text-[14px] text-[#2B3732] dark:text-white focus:outline-none focus:border-[#A86849]">
                   <option value="Алмазное бурение бетона">Алмазное бурение бетона</option>
                   <option value="Алмазная резка бетона">Алмазная резка бетона</option>
                 </select>
               </div>
               <div class="sm:col-span-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-1">
-                <label class="inline-flex items-start gap-2.5 text-[12px] text-[#64748B] dark:text-slate-400 cursor-pointer">
-                  <input type="checkbox" id="inlineConsent" checked class="mt-0.5 rounded border-slate-300 text-[#E86C17] focus:ring-[#E86C17]" />
+                <label class="inline-flex items-start gap-2.5 text-[12px] text-[#74766F] dark:text-slate-400 cursor-pointer">
+                  <input type="checkbox" id="inlineConsent" checked class="mt-0.5 rounded border-slate-300 text-[#A86849] focus:ring-[#A86849]" />
                   <span id="consentTextInline">Согласен на обработку персональных данных</span>
                 </label>
-                <button type="submit" id="inlineSubmitBtn" class="bg-[#E86C17] hover:bg-[#D35D0E] text-white text-[14px] font-semibold px-7 py-3 rounded-[10px] transition-colors shrink-0">
+                <button type="submit" id="inlineSubmitBtn" class="bg-[#A86849] hover:bg-[#8E573D] text-white text-[14px] font-semibold px-7 py-3 rounded-[10px] transition-colors shrink-0">
                   Отправить
                 </button>
               </div>
@@ -395,32 +349,13 @@
   </section>
 
   <!-- CONTACTS & FOOTER SECTION (#contacts) -->
-  <footer id="contacts" class="bg-[#0D1526] text-white pt-12 pb-10">
+  <footer id="contacts" class="bg-[#29342F] text-white pt-12 pb-10">
     <div class="max-w-[1220px] mx-auto px-4 sm:px-6">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-10 border-b border-white/10">
         
-        <!-- Column 1: Logo & Short Tagline -->
+        <!-- Column 1: Service summary -->
         <div class="md:col-span-5">
-          <div class="flex items-center gap-2.5">
-            <svg class="w-9 h-10 shrink-0" viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="7" y="2" width="10" height="4" rx="1" fill="#FFFFFF"/>
-              <rect x="11" y="6" width="2.5" height="6" fill="#FFFFFF"/>
-              <path d="M6 12H18V33L12 41L6 33V12Z" fill="#FFFFFF"/>
-              <path d="M8 17L16 14.5V18L8 20.5V17Z" fill="#E86C17"/>
-              <path d="M8 23.5L16 21V24.5L8 27V23.5Z" fill="#E86C17"/>
-              <path d="M8 30L16 27.5V31L8 33.5V30Z" fill="#E86C17"/>
-              <path d="M21 7L29 22H24L29 38L18 21H23L21 7Z" fill="#E86C17"/>
-            </svg>
-            <div class="flex flex-col leading-none">
-              <span class="text-[19px] font-extrabold uppercase tracking-[-0.03em] text-white">
-                АЛМАЗНОЕ
-              </span>
-              <span class="text-[13px] font-extrabold uppercase tracking-[0.06em] text-[#E86C17] mt-0.5">
-                БУРЕНИЕ
-              </span>
-            </div>
-          </div>
-          <p id="footerDescription" class="text-[13px] text-slate-400 mt-4 max-w-sm leading-relaxed">
+          <p id="footerDescription" class="text-[13px] text-slate-400 max-w-sm leading-relaxed">
             Профессиональные услуги алмазного бурения и алмазной резки бетона.
           </p>
         </div>
@@ -432,12 +367,12 @@
           </h3>
           <ul class="space-y-2.5 text-[14px] text-slate-300">
             <li>
-              <button type="button" id="footerLinkDrilling" class="hover:text-[#E86C17] transition-colors text-left">
+              <button type="button" id="footerLinkDrilling" class="hover:text-[#A86849] transition-colors text-left">
                 Алмазное бурение бетона
               </button>
             </li>
             <li>
-              <button type="button" id="footerLinkCutting" class="hover:text-[#E86C17] transition-colors text-left">
+              <button type="button" id="footerLinkCutting" class="hover:text-[#A86849] transition-colors text-left">
                 Алмазная резка бетона
               </button>
             </li>
@@ -451,12 +386,12 @@
           </h3>
           <div class="space-y-3">
             <div>
-              <a href="tel:+77052675327" class="text-[18px] font-bold text-white hover:text-[#E86C17] transition-colors">
-                +7 705 267 5327
+              <a href="tel:+77058153208" class="text-[18px] font-bold text-white hover:text-[#A86849] transition-colors">
+                +7 705 815 32 08
               </a>
             </div>
             <div>
-              <a id="footerWaBtn" href="https://wa.me/77052675327" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[14px] font-semibold text-[#25D366] hover:underline">
+              <a id="footerWaBtn" href="https://wa.me/77058153208" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[14px] font-semibold text-[#25D366] hover:underline">
                 <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.124 1.533 5.861l-1.533 5.602 5.735-1.504c1.693.924 3.633 1.449 5.698 1.449 6.627 0 12-5.373 12-12s-5.373-12-11.433-11.408z"/>
                 </svg>
@@ -481,66 +416,66 @@
     </div>
   </footer>
 
-  <!-- FLOATING QUICK ACTION BAR (Bottom-Right as on enstroy.kz: Звонок / WhatsApp / Заявка) -->
-  <div class="fixed bottom-5 right-5 z-30 flex items-center gap-2 bg-white dark:bg-[#162032] border border-[#CBD5E1] dark:border-slate-700 shadow-lg rounded-full p-1.5">
-    <a href="tel:+77052675327" class="px-3.5 py-2 rounded-full text-[12px] font-semibold text-[#0E1726] dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+  <!-- FLOATING QUICK ACTION BAR (Bottom-Right: Call / WhatsApp / Request) -->
+  <div class="fixed bottom-5 right-5 z-30 flex items-center gap-2 bg-white dark:bg-[#162032] border border-[#D8D7CF] dark:border-slate-700 shadow-lg rounded-full p-1.5">
+    <a href="tel:+77058153208" class="px-3.5 py-2 rounded-full text-[12px] font-semibold text-[#2B3732] dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
       Звонок
     </a>
-    <a href="https://wa.me/77052675327" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-full text-[12px] font-semibold bg-[#25D366] text-white hover:bg-[#1EBE5B] transition-colors">
+    <a href="https://wa.me/77058153208" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-full text-[12px] font-semibold bg-[#25D366] text-white hover:bg-[#1EBE5B] transition-colors">
       WhatsApp
     </a>
-    <button type="button" id="floatingCallbackBtn" class="px-3.5 py-2 rounded-full text-[12px] font-semibold bg-[#E86C17] text-white hover:bg-[#D35D0E] transition-colors">
+    <button type="button" id="floatingCallbackBtn" class="px-3.5 py-2 rounded-full text-[12px] font-semibold bg-[#A86849] text-white hover:bg-[#8E573D] transition-colors">
       Заявка
     </button>
   </div>
 
-  <!-- MODAL 1: "Заказать звонок" (Exact match to enstroy.kz modal) -->
+  <!-- MODAL 1: "Заказать звонок" -->
   <div id="callbackModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-xs p-4" role="dialog" aria-modal="true" aria-labelledby="callbackModalTitle">
-    <div class="bg-white dark:bg-[#0E1726] w-full max-w-[460px] rounded-[20px] p-6 sm:p-8 relative shadow-2xl border border-slate-100 dark:border-slate-800">
-      <button type="button" id="closeCallbackModalBtn" aria-label="Закрыть окно" class="absolute top-5 right-5 w-9 h-9 rounded-full flex items-center justify-center text-slate-400 hover:text-[#0E1726] dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+    <div class="bg-white dark:bg-[#2B3732] w-full max-w-[460px] rounded-[20px] p-6 sm:p-8 relative shadow-2xl border border-slate-100 dark:border-slate-800">
+      <button type="button" id="closeCallbackModalBtn" aria-label="Закрыть окно" class="absolute top-5 right-5 w-9 h-9 rounded-full flex items-center justify-center text-slate-400 hover:text-[#2B3732] dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
         </svg>
       </button>
 
-      <h3 id="callbackModalTitle" class="text-[22px] font-bold text-[#0E1726] dark:text-white">
+      <h3 id="callbackModalTitle" class="text-[22px] font-bold text-[#2B3732] dark:text-white">
         Заказать звонок
       </h3>
-      <p id="callbackModalSubtitle" class="text-[13px] text-[#64748B] dark:text-slate-400 mt-1">
+      <p id="callbackModalSubtitle" class="text-[13px] text-[#74766F] dark:text-slate-400 mt-1">
         Наш менеджер перезвонит Вам в течение 5 минут
       </p>
 
       <form id="modalCallbackForm" class="mt-5 space-y-4" novalidate>
         <div>
-          <label for="modalName" class="block text-[13px] font-semibold text-[#0E1726] dark:text-slate-200 mb-1">Имя</label>
-          <input type="text" id="modalName" placeholder="Укажите имя" class="w-full rounded-[10px] border border-[#CBD5E1] dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-2.5 text-[14px] text-[#0E1726] dark:text-white focus:outline-none focus:border-[#E86C17]" required />
+          <label for="modalName" class="block text-[13px] font-semibold text-[#2B3732] dark:text-slate-200 mb-1">Имя</label>
+          <input type="text" id="modalName" placeholder="Укажите имя" class="w-full rounded-[10px] border border-[#D8D7CF] dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-2.5 text-[14px] text-[#2B3732] dark:text-white focus:outline-none focus:border-[#A86849]" required />
         </div>
         <div>
-          <label for="modalPhone" class="block text-[13px] font-semibold text-[#0E1726] dark:text-slate-200 mb-1">Телефон</label>
-          <input type="tel" id="modalPhone" placeholder="+7 705 267 53 27" class="phone-input w-full rounded-[10px] border border-[#CBD5E1] dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-2.5 text-[14px] text-[#0E1726] dark:text-white focus:outline-none focus:border-[#E86C17]" required />
+          <label for="modalPhone" class="block text-[13px] font-semibold text-[#2B3732] dark:text-slate-200 mb-1">Телефон</label>
+          <input type="tel" id="modalPhone" placeholder="+7 xxx xxx xx xx" class="phone-input w-full rounded-[10px] border border-[#D8D7CF] dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-2.5 text-[14px] text-[#2B3732] dark:text-white focus:outline-none focus:border-[#A86849]" required />
         </div>
         <div>
-          <label for="modalTask" class="block text-[13px] font-semibold text-[#0E1726] dark:text-slate-200 mb-1">Что нужно сделать</label>
-          <select id="modalTask" class="city-select w-full rounded-[10px] border border-[#CBD5E1] dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-2.5 pr-10 text-[14px] text-[#0E1726] dark:text-white focus:outline-none focus:border-[#E86C17]">
+          <label for="modalTask" class="block text-[13px] font-semibold text-[#2B3732] dark:text-slate-200 mb-1">Что нужно сделать</label>
+          <select id="modalTask" class="city-select w-full rounded-[10px] border border-[#D8D7CF] dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-2.5 pr-10 text-[14px] text-[#2B3732] dark:text-white focus:outline-none focus:border-[#A86849]">
             <option value="Алмазное бурение бетона">Алмазное бурение бетона</option>
             <option value="Алмазная резка бетона">Алмазная резка бетона</option>
           </select>
         </div>
 
-        <label class="flex items-start gap-2.5 text-[12px] text-[#64748B] dark:text-slate-400 cursor-pointer">
-          <input type="checkbox" id="modalConsent" checked class="mt-0.5 rounded border-slate-300 text-[#E86C17] focus:ring-[#E86C17]" />
+        <label class="flex items-start gap-2.5 text-[12px] text-[#74766F] dark:text-slate-400 cursor-pointer">
+          <input type="checkbox" id="modalConsent" checked class="mt-0.5 rounded border-slate-300 text-[#A86849] focus:ring-[#A86849]" />
           <span>Согласен на обработку персональных данных в соответствии с политикой конфиденциальности</span>
         </label>
 
         <p id="modalFormStatus" class="text-[13px] font-medium hidden"></p>
 
-        <button type="submit" class="w-full bg-[#E86C17] hover:bg-[#D35D0E] text-white text-[14px] font-semibold py-3 rounded-[10px] transition-colors">
+        <button type="submit" class="w-full bg-[#A86849] hover:bg-[#8E573D] text-white text-[14px] font-semibold py-3 rounded-[10px] transition-colors">
           Отправить
         </button>
 
         <div class="text-center pt-1">
-          <span class="text-[12px] text-[#64748B] dark:text-slate-400">или напишите в </span>
-          <a id="modalWaDirectLink" href="https://wa.me/77052675327" target="_blank" rel="noopener noreferrer" class="text-[12px] font-bold text-[#25D366] hover:underline">
+          <span class="text-[12px] text-[#74766F] dark:text-slate-400">или напишите в </span>
+          <a id="modalWaDirectLink" href="https://wa.me/77058153208" target="_blank" rel="noopener noreferrer" class="text-[12px] font-bold text-[#25D366] hover:underline">
             WhatsApp
           </a>
         </div>
@@ -550,8 +485,8 @@
 
   <!-- MODAL 2: Service Details ("Подробнее" for Алмазное бурение бетона / Алмазная резка бетона) -->
   <div id="serviceDetailModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-xs p-4" role="dialog" aria-modal="true" aria-labelledby="detailModalTitle">
-    <div class="bg-white dark:bg-[#0E1726] w-full max-w-[600px] rounded-[20px] overflow-hidden relative shadow-2xl border border-slate-100 dark:border-slate-800">
-      <button type="button" id="closeDetailModalBtn" aria-label="Закрыть описание" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-white/90 dark:bg-slate-900/90 flex items-center justify-center text-[#0E1726] dark:text-white hover:bg-white transition-colors shadow">
+    <div class="bg-white dark:bg-[#2B3732] w-full max-w-[600px] rounded-[20px] overflow-hidden relative shadow-2xl border border-slate-100 dark:border-slate-800">
+      <button type="button" id="closeDetailModalBtn" aria-label="Закрыть описание" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-white/90 dark:bg-slate-900/90 flex items-center justify-center text-[#2B3732] dark:text-white hover:bg-white transition-colors shadow">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
         </svg>
@@ -562,18 +497,18 @@
       </div>
 
       <div class="p-6 sm:p-8">
-        <h3 id="detailModalTitle" class="text-[22px] sm:text-[24px] font-bold text-[#0E1726] dark:text-white">
+        <h3 id="detailModalTitle" class="text-[22px] sm:text-[24px] font-bold text-[#2B3732] dark:text-white">
           Алмазное бурение бетона
         </h3>
-        <p id="detailModalText" class="text-[14px] sm:text-[15px] text-[#475569] dark:text-slate-300 mt-3 leading-relaxed"></p>
+        <p id="detailModalText" class="text-[14px] sm:text-[15px] text-[#55615A] dark:text-slate-300 mt-3 leading-relaxed"></p>
 
-        <ul id="detailModalList" class="mt-4 space-y-2 text-[14px] text-[#0E1726] dark:text-slate-200"></ul>
+        <ul id="detailModalList" class="mt-4 space-y-2 text-[14px] text-[#2B3732] dark:text-slate-200"></ul>
 
         <div class="mt-6 pt-5 border-t border-slate-100 dark:border-slate-800 flex flex-wrap items-center gap-3">
-          <button type="button" id="detailOrderBtn" class="bg-[#E86C17] hover:bg-[#D35D0E] text-white text-[14px] font-semibold px-6 py-3 rounded-[10px] transition-colors">
+          <button type="button" id="detailOrderBtn" class="bg-[#A86849] hover:bg-[#8E573D] text-white text-[14px] font-semibold px-6 py-3 rounded-[10px] transition-colors">
             Заказать расчёт
           </button>
-          <a id="detailWaBtn" href="https://wa.me/77052675327" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-[10px] bg-[#25D366] hover:bg-[#1EBE5B] text-white text-[14px] font-semibold transition-colors">
+          <a id="detailWaBtn" href="https://wa.me/77058153208" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-[10px] bg-[#25D366] hover:bg-[#1EBE5B] text-white text-[14px] font-semibold transition-colors">
             <span>Написать на WhatsApp</span>
           </a>
         </div>
@@ -583,33 +518,7 @@
 
   <script>
     (function () {
-      const WHATSAPP_NUMBER = '77052675327';
-
-      // Prepositional case mapping for Kazakhstani cities in Russian & Kazakh
-      const cityLocativeRu = {
-        'Астана': 'в Астане',
-        'Алматы': 'в Алматы',
-        'Шымкент': 'в Шымкенте',
-        'Актобе': 'в Актобе',
-        'Караганда': 'в Караганде',
-        'Тараз': 'в Таразе',
-        'Усть-Каменогорск': 'в Усть-Каменогорске',
-        'Павлодар': 'в Павлодаре',
-        'Атырау': 'в Атырау',
-        'Семей': 'в Семее',
-        'Кызылорда': 'в Кызылорде',
-        'Актау': 'в Актау',
-        'Костанай': 'в Костанае',
-        'Уральск': 'в Уральске',
-        'Туркестан': 'в Туркестане',
-        'Петропавловск': 'в Петропавловске',
-        'Кокшетау': 'в Кокшетау',
-        'Темиртау': 'в Темиртау',
-        'Талдыкорган': 'в Талдыкоргане',
-        'Экибастуз': 'в Экибастузе',
-        'Рудный': 'в Рудном',
-        'Конаев': 'в Конаеве'
-      };
+      const WHATSAPP_NUMBER = '77058153208';
 
       const translations = {
         ru: {
@@ -618,13 +527,12 @@
           callbackBtn: 'Заказать звонок',
           breadcrumbHome: 'Главная',
           breadcrumbCurrent: 'Наши услуги',
-          headingPrefix: 'Алмазное бурение и резка бетона',
-          headingSuffix: 'и по Казахстану',
+          heading: 'Алмазное бурение и резка бетона в Астане',
           filterAll: 'Все',
           filterDrilling: 'Алмазное бурение бетона',
           filterCutting: 'Алмазная резка бетона',
-          cityLabel: 'Выберите подходящий для вас город',
-          cityHelper: 'Откроется версия услуг для выбранного города',
+          cityLabel: 'Город выезда',
+          cityHelper: 'Выезжаем по Астане',
           sectionTitle: 'Бурение, сверление и резка',
           titleDrilling: 'Алмазное бурение бетона',
           descDrilling: 'Профессиональное алмазное бурение точных отверстий в бетоне, железобетоне и кирпиче под вентиляцию, сантехнику, отопление и инженерные сети. Высокая точность и минимальные повреждения материала.',
@@ -669,13 +577,12 @@
           callbackBtn: 'Қоңырау шалу',
           breadcrumbHome: 'Басты бет',
           breadcrumbCurrent: 'Біздің қызметтер',
-          headingPrefix: 'Бетонды алмазды бұрғылау және кесу:',
-          headingSuffix: 'және Қазақстан бойынша',
+          heading: 'Астанада бетонды алмазды бұрғылау және кесу',
           filterAll: 'Барлығы',
           filterDrilling: 'Бетонды алмазды бұрғылау',
           filterCutting: 'Бетонды алмазды кесу',
-          cityLabel: 'Өзіңізге ыңғайлы қаланы таңдаңыз',
-          cityHelper: 'Таңдалған қалаға арналған қызметтер нұсқасы ашылады',
+          cityLabel: 'Қызмет көрсету қаласы',
+          cityHelper: 'Астана қаласында қызмет көрсетеміз',
           sectionTitle: 'Бұрғылау және кесу',
           titleDrilling: 'Бетонды алмазды бұрғылау',
           descDrilling: 'Желдету, сантехника, жылыту және инженерлік желілер үшін бетонда, темірбетонда және кірпіште дәл саңылауларды кәсіби алмазды бұрғылау. Жоғары дәлдік пен материалға минималды әсер.',
@@ -736,12 +643,7 @@
 
       function updateCityAndHeading() {
         const t = translations[currentLang];
-        if (currentLang === 'ru') {
-          const loc = cityLocativeRu[currentCity] || `в г. ${currentCity}`;
-          mainPageHeading.textContent = `${t.headingPrefix} ${loc} ${t.headingSuffix}`;
-        } else {
-          mainPageHeading.textContent = `${t.headingPrefix} ${currentCity} ${t.headingSuffix}`;
-        }
+        mainPageHeading.textContent = t.heading;
         footerCityLabel.textContent = `г. ${currentCity}`;
         waLinkDrilling.href = buildWhatsAppUrl('алмазное бурение бетона', currentCity);
         waLinkCutting.href = buildWhatsAppUrl('алмазная резка бетона', currentCity);
@@ -761,9 +663,9 @@
         filterButtons.forEach((btn) => {
           const isActive = btn.getAttribute('data-filter') === filterKey;
           if (isActive) {
-            btn.className = 'filter-pill px-4 py-1.5 rounded-full text-[13px] font-medium border transition-all bg-[#0E1726] text-white border-[#0E1726] dark:bg-white dark:text-[#0E1726] dark:border-white';
+            btn.className = 'filter-pill px-4 py-1.5 rounded-full text-[13px] font-medium border transition-all bg-[#A86849] text-white border-[#A86849] dark:bg-[#A86849] dark:text-white dark:border-[#A86849]';
           } else {
-            btn.className = 'filter-pill px-4 py-1.5 rounded-full text-[13px] font-normal border transition-all bg-white dark:bg-slate-900 text-[#475569] dark:text-slate-300 border-[#CBD5E1] dark:border-slate-700 hover:border-[#0E1726] dark:hover:border-slate-400';
+            btn.className = 'filter-pill px-4 py-1.5 rounded-full text-[13px] font-normal border transition-all bg-white dark:bg-slate-900 text-[#55615A] dark:text-slate-300 border-[#D8D7CF] dark:border-slate-700 hover:border-[#A86849] dark:hover:border-slate-400';
           }
         });
 
@@ -789,10 +691,10 @@
 
       function setActiveNav(target) {
         if (target === 'contacts') {
-          navContacts.classList.add('nav-link-active', 'font-medium', 'text-[#0E1726]', 'dark:text-white');
+          navContacts.classList.add('nav-link-active', 'font-medium', 'text-[#2B3732]', 'dark:text-white');
           navServices.classList.remove('nav-link-active');
         } else {
-          navServices.classList.add('nav-link-active', 'font-medium', 'text-[#0E1726]', 'dark:text-white');
+          navServices.classList.add('nav-link-active', 'font-medium', 'text-[#2B3732]', 'dark:text-white');
           navContacts.classList.remove('nav-link-active');
         }
       }
@@ -834,10 +736,10 @@
         const t = translations[lang];
 
         if (lang === 'ru') {
-          langRusBtn.className = 'px-3 py-1 rounded-full text-[11px] font-bold bg-white text-[#0D1526] transition-all';
+          langRusBtn.className = 'px-3 py-1 rounded-full text-[11px] font-bold bg-white text-[#29342F] transition-all';
           langKazBtn.className = 'px-3 py-1 rounded-full text-[11px] font-semibold text-white/80 hover:text-white transition-all';
         } else {
-          langKazBtn.className = 'px-3 py-1 rounded-full text-[11px] font-bold bg-white text-[#0D1526] transition-all';
+          langKazBtn.className = 'px-3 py-1 rounded-full text-[11px] font-bold bg-white text-[#29342F] transition-all';
           langRusBtn.className = 'px-3 py-1 rounded-full text-[11px] font-semibold text-white/80 hover:text-white transition-all';
         }
 
@@ -939,7 +841,7 @@
         t.bullets.forEach((b) => {
           const li = document.createElement('li');
           li.className = 'flex items-start gap-2.5';
-          li.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-[#E86C17] mt-2 shrink-0"></span><span>${b}</span>`;
+          li.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-[#A86849] mt-2 shrink-0"></span><span>${b}</span>`;
           detailModalList.appendChild(li);
         });
 
